@@ -14,8 +14,21 @@ public class Main
 
  
 		SoundExtractor se = new SoundExtractor(makeSoundexRules());
+		
+		String dicPath = null; 
+		
+		if(args.length == 1)
+		{
+			dicPath = args[0]; 
+		}	
+		else
+		{
+			dicPath = "./resource/verb.pl";
+		 
+		}
+		
  
-		RegisterDictionary("./resource/verb.pl", se);
+		RegisterDictionary(dicPath, se);
 		 
 		SoundexCollection soundCollection = SoundexCollection.getInstance();
 		
